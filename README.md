@@ -211,7 +211,7 @@ Also, see the [online doxygen documentation of ABY](http://encryptogroup.github.
   * By default applications are tested locally (via sockets on `localhost`). You can run them on two different machines by specifying IP addresses and ports as parameters.
   * **Example:** The Millionaire's problem requires to specify the role of the executing party. All other parameters will use default values if they are not set. You execute it locally with: `./millionaire_prob_test -r 0` and `./millionaire_prob_test -r 1`, each in a separate terminal.
   * You should get some debug output for you to verify the correctness of the computation.
-  * Performance statistics can be turned on setting `#define PRINT_PERFORMANCE_STATS 1` in `src/abycore/ABY_utils/ABYconstants.h` in [line 33](https://github.com/encryptogroup/ABY/blob/public/src/abycore/ABY_utils/ABYconstants.h#L33).
+  * Performance statistics can be turned on setting `#define PRINT_PERFORMANCE_STATS 1` in `src/abycore/utils/ABYconstants.h` in [line 33](https://github.com/encryptogroup/ABY/blob/public/src/abycore/ABY_utils/ABYconstants.h#L33).
 
 #### Creating and Building your own ABY Application
 * To get an idea how to create a simple ABY application, you can follow the

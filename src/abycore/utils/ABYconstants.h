@@ -140,6 +140,11 @@ enum e_operation {
 	OP_AND = 1, /**< Enum for performing LOGICAL AND*/
 	OP_ADD = 2, /**< Enum for performing ADDITION*/
 	OP_MUL = 3, /**< Enum for performing MULTIPLICATION*/
+    OP_FP_ADD,
+    OP_FP_SUB,
+    OP_FP_MUL,
+    OP_FP_DIV,
+    OP_FP_SQRT,
 	OP_CMP = 4, /**< Enum for performing COMPARISON*/
 	OP_EQ = 5, /**< Enum for performing EQUALITY*/
 	OP_MUX = 6, /**< Enum for performing MULTIPLEXER*/

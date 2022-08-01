@@ -20,7 +20,7 @@
 #define __YAOSHARING_H__
 
 #include "sharing.h"
-#include "../ABY_utils/yaokey.h"
+#include "../utils/yaokey.h"
 #include "../circuit/booleancircuits.h"
 #include <ENCRYPTO_utils/constants.h>
 #include <ENCRYPTO_utils/crypto/crypto.h>

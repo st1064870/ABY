@@ -21,7 +21,7 @@
 #include "share.h"
 #include "abycircuit.h"
 #include "circuit.h"
-#include "../ABY_utils/convtypes.h"
+#include "../utils/convtypes.h"
 #include <ENCRYPTO_utils/cbitvector.h>
 #include <ENCRYPTO_utils/parse_options.h>
 #include <ENCRYPTO_utils/typedefs.h>

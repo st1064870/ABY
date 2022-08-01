@@ -410,6 +410,24 @@ void ArithSharing<T>::EvaluateADDGate(GATE* gate) {
 }
 
 template<typename T>
+void ArithSharing<T>::EvaluateFPGate(GATE* gate) {
+    uint32_t nvals = gate->nvals;
+    uint32_t idleft = gate->ingates.inputs.twin.left;
+    uint32_t idright = gate->ingates.inputs.twin.right;
+    InstantiateGate(gate);
+
+    for (uint32_t i = 0; i < nvals; i++) {
+        ((T*) gate->gs.aval)[i] = ((T*) m_vGates[idleft].gs.aval)[i] + ((T*) m_vGates[idright].gs.aval)[i];
+#ifdef DEBUGARITH
+        std::cout << "Result ADD (" << i << "): "<< ((T*)gate->gs.aval)[i] << " = " << ((T*) m_vGates[idleft].gs.aval)[i] << " + " << ((T*)m_vGates[idright].gs.aval)[i] << std::endl;
+#endif
+    }
+
+    UsedGate(idleft);
+    UsedGate(idright);
+}
+
+template<typename T>
 void ArithSharing<T>::EvaluateMULCONSTGate(GATE* gate) {
 	const uint32_t nvals = gate->nvals;
 	const uint32_t idleft = gate->ingates.inputs.twin.left;

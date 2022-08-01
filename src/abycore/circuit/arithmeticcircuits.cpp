@@ -95,7 +95,7 @@ uint32_t ArithmeticCircuit::PutADDGate(uint32_t inleft, uint32_t inright) {
 
 share* ArithmeticCircuit::PutADDGate(share* ina, share* inb) {
 	share* shr = new arithshare(this);
-	shr->set_wire_id(0, PutADDGate(ina->get_wire_id(0), inb->get_wire_id(0)));
+	shr->set_wire_id(0, PutFPGate(ina->get_wire_id(0), inb->get_wire_id(0)));
 	return shr;
 }
 
@@ -113,6 +113,20 @@ share* ArithmeticCircuit::PutSUBGate(share* ina, share* inb) {
 	shr->set_wire_id(0, PutSUBGate(ina->get_wire_id(0), inb->get_wire_id(0)));
 	return shr;
 }
+
+
+uint32_t ArithmeticCircuit::PutFPGate(uint32_t inleft, uint32_t inright) {
+    uint32_t gateid = m_cCircuit->PutPrimitiveGate(G_LIN, inleft, inright, m_nRoundsXOR);
+    UpdateLocalQueue(gateid);
+    return gateid;
+}
+
+share *ArithmeticCircuit::PutFPGate(share *ina, share *inb) {
+    share* shr = new arithshare(this);
+    shr->set_wire_id(0, PutADDGate(ina->get_wire_id(0), inb->get_wire_id(0)));
+    return shr;
+}
+
 uint32_t ArithmeticCircuit::PutINGate(e_role src) {
 	uint32_t gateid = m_cCircuit->PutINGate(m_eContext, 1, m_nShareBitLen, src, m_nRoundsIN[src]);
 	UpdateInteractiveQueue(gateid);
@@ -355,7 +369,6 @@ share* ArithmeticCircuit::PutSIMDCONSGate(uint32_t nvals, uint32_t* val, uint32_
 	}
 	return new arithshare(gateids, this);
 }
-
 
 uint32_t ArithmeticCircuit::PutConstantGate(UGATE_T val, uint32_t nvals) {
 	uint32_t gateid = m_cCircuit->PutConstantGate(m_eContext, val, nvals, m_nShareBitLen);

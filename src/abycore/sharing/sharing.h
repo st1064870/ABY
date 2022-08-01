@@ -22,7 +22,7 @@
 #define __SHARING_H__
 
 #include <ENCRYPTO_utils/cbitvector.h>
-#include "../ABY_utils/ABYconstants.h"
+#include "../utils/ABYconstants.h"
 #include <cstdint>
 #include <vector>
 //#define DEBUGSHARING

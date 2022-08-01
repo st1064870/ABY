@@ -20,7 +20,7 @@
 #define SHARE_H_
 
 #include "circuit.h"
-#include "../ABY_utils/ABYconstants.h"
+#include "../utils/ABYconstants.h"
 #include <cassert>
 #include <cstdint>
 #include <vector>

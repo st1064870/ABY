@@ -21,7 +21,7 @@
 
 #include <ENCRYPTO_utils/typedefs.h>
 #include <ENCRYPTO_utils/crypto/crypto.h>
-#include "../ABY_utils/ABYconstants.h"
+#include "../utils/ABYconstants.h"
 #include <ot/naor-pinkas.h>
 #include <ot/ot-ext.h>
 #include <ot/xormasking.h>

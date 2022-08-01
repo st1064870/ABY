@@ -26,6 +26,7 @@
 #include "../sharing/splut.h"
 #include "../sharing/yaoclientsharing.h"
 #include "../sharing/yaoserversharing.h"
+#include "abycore/utils/ABYconstants.h"
 #include <ENCRYPTO_utils/crypto/crypto.h>
 #include <ENCRYPTO_utils/connection.h>
 #include <ENCRYPTO_utils/thread.h>

@@ -20,7 +20,7 @@
 
 #include <math.h>
 #include <ENCRYPTO_utils/typedefs.h>
-#include "../ABY_utils/ABYconstants.h"
+#include "../utils/ABYconstants.h"
 #include <string>
 #include <vector>
 #include <fstream>
@@ -158,14 +158,14 @@ struct input_gates {
 struct GATE {
 	bool instantiated;
 	e_sharing context;		// the representation of the value stored in the gate (Public / arithmetic sharing / Boolean sharing / Yao sharing)
-	e_gatetype type;			// gate type
+	e_gatetype type;	    // gate type
 	uint32_t nrounds;		// specifies the number of interaction rounds that are required when evaluating this gate
 	uint32_t nused;			// number of uses of the gate
 	uint32_t depth;			// number of AND gates to the root
 	uint32_t nvals;			// the number of values that are stored in this gate
 	gs_t gs;				// here the differences for the gates come in
 	uint32_t sharebitlen;	// bitlength of the shares in the context
-	input_gates ingates;		// the number of input gates together with the values of the input gates
+	input_gates ingates;	// the number of input gates together with the values of the input gates
 };
 
 std::string GetOpName(e_gatetype op);
